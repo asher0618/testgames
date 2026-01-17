@@ -28,72 +28,95 @@
   </div>
 </header>
 
-<!-- CENTERED CATEGORY TITLE -->
 <h2 id="category-title">All Games</h2>
 
 <main class="grid">
 
-  <!-- ARCADE -->
-  <div class="card arcade"><img src="thumbnails/game1.png"><p>Neon Runner</p></div>
-  <div class="card arcade"><img src="thumbnails/game2.png"><p>Retro Dash</p></div>
-  <div class="card arcade"><img src="thumbnails/game3.png"><p>Block Smash</p></div>
-  <div class="card arcade"><img src="thumbnails/game15.png"><p>Pixel Racer</p></div>
-  <div class="card arcade"><img src="thumbnails/game16.png"><p>Laser Jump</p></div>
+  <!-- ORIGINAL & AZ GAME CARDS -->
 
-  <!-- SHOOTING -->
-  <div class="card shooting"><img src="thumbnails/game4.png"><p>Pixel Ops</p></div>
-  <div class="card shooting"><img src="thumbnails/game5.png"><p>Void Shooter</p></div>
-  <div class="card shooting"><img src="thumbnails/game17.png"><p>Star Sniper</p></div>
+  <!-- Arcade -->
+  <div class="card arcade" data-game-url="https://azgames.io/animal-craft">
+    <img src="thumbnails/game1.png">
+    <p>Neon Runner</p>
+  </div>
+  <div class="card arcade" data-game-url="https://azgames.io/loop-crash">
+    <img src="thumbnails/game2.png">
+    <p>Retro Dash</p>
+  </div>
 
-  <!-- CARS -->
-  <div class="card cars"><img src="thumbnails/game6.png"><p>Night Drift</p></div>
-  <div class="card cars"><img src="thumbnails/game7.png"><p>Turbo Lane</p></div>
-  <div class="card cars"><img src="thumbnails/game18.png"><p>Speed Rally</p></div>
+  <!-- Shooting -->
+  <div class="card shooting" data-game-url="https://azgames.io/undead-corridor">
+    <img src="thumbnails/game3.png">
+    <p>Void Shooter</p>
+  </div>
 
-  <!-- ADVENTURE -->
-  <div class="card adventure"><img src="thumbnails/game8.png"><p>Lost Realm</p></div>
-  <div class="card adventure"><img src="thumbnails/game9.png"><p>Dungeon Path</p></div>
-  <div class="card adventure"><img src="thumbnails/game19.png"><p>Forest Quest</p></div>
-  <div class="card adventure"><img src="thumbnails/game20.png"><p>Cave Explorer</p></div>
+  <!-- Cars -->
+  <div class="card cars" data-game-url="https://azgames.io/car-chaos">
+    <img src="thumbnails/game4.png">
+    <p>Car Chaos</p>
+  </div>
+  <div class="card cars" data-game-url="https://azgames.io/police-drive">
+    <img src="thumbnails/game5.png">
+    <p>Police Drive</p>
+  </div>
 
-  <!-- PUZZLE -->
-  <div class="card puzzle"><img src="thumbnails/game10.png"><p>Mind Grid</p></div>
-  <div class="card puzzle"><img src="thumbnails/game11.png"><p>Hex Logic</p></div>
-  <div class="card puzzle"><img src="thumbnails/game21.png"><p>Shape Matcher</p></div>
+  <!-- Adventure -->
+  <div class="card adventure" data-game-url="https://azgames.io/dino-age">
+    <img src="thumbnails/game6.png">
+    <p>Dino Age</p>
+  </div>
 
-  <!-- CLICKER -->
-  <div class="card clicker"><img src="thumbnails/game12.png"><p>Click Forge</p></div>
-  <div class="card clicker"><img src="thumbnails/game22.png"><p>Idle Miner</p></div>
+  <!-- Puzzle -->
+  <div class="card puzzle" data-game-url="https://azgames.io/plants-vs-brainrots">
+    <img src="thumbnails/game7.png">
+    <p>Plants vs Brainrots</p>
+  </div>
+
+  <!-- Clicker -->
+  <div class="card clicker" data-game-url="https://azgames.io/tap-rich-idle">
+    <img src="thumbnails/game8.png">
+    <p>Tap Rich Idle</p>
+  </div>
 
   <!-- IO -->
-  <div class="card io"><img src="thumbnails/game13.png"><p>Dots.io</p></div>
-  <div class="card io"><img src="thumbnails/game14.png"><p>WormZone</p></div>
-  <div class="card io"><img src="thumbnails/game23.png"><p>Blob Battle</p></div>
+  <div class="card io" data-game-url="https://azgames.io/orbit-kick">
+    <img src="thumbnails/game9.png">
+    <p>Orbit Kick</p>
+  </div>
+  <div class="card io" data-game-url="https://azgames.io/tiny-arena">
+    <img src="thumbnails/game10.png">
+    <p>Tiny Arena</p>
+  </div>
 
-  <!-- MULTIPLAYER -->
-  <div class="card multiplayer"><img src="thumbnails/game24.png"><p>Battle Arena</p></div>
-  <div class="card multiplayer"><img src="thumbnails/game25.png"><p>Treasure Hunters</p></div>
-  <div class="card multiplayer"><img src="thumbnails/game26.png"><p>Speed Racers Online</p></div>
-  <div class="card multiplayer"><img src="thumbnails/game27.png"><p>Survival Squad</p></div>
+  <!-- Sports -->
+  <div class="card sports" data-game-url="https://azgames.io/arcade-tennis">
+    <img src="thumbnails/game11.png">
+    <p>Arcade Tennis</p>
+  </div>
 
 </main>
 
+<!-- GAME MODAL -->
+<div id="game-modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <iframe id="game-frame" src="" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+</div>
+
 <script>
+// FILTER FUNCTION
 function filterGames(category) {
   const cards = document.querySelectorAll('.card');
   const title = document.getElementById('category-title');
-
-  title.textContent =
-    category.charAt(0).toUpperCase() + category.slice(1) + " Games";
+  title.textContent = category.charAt(0).toUpperCase() + category.slice(1) + " Games";
   title.style.textAlign = "center";
   title.style.width = "100%";
 
   cards.forEach(card => {
-    card.style.display =
-      card.classList.contains(category) ? "block" : "none";
+    card.style.display = card.classList.contains(category) ? "block" : "none";
   });
 }
 
+// GO HOME FUNCTION
 function goHome() {
   const cards = document.querySelectorAll('.card');
   const title = document.getElementById('category-title');
@@ -101,9 +124,22 @@ function goHome() {
   title.style.textAlign = "center";
   title.style.width = "100%";
 
-  cards.forEach(card => {
-    card.style.display = "block";
+  cards.forEach(card => card.style.display = "block");
+}
+
+// CLICK-TO-PLAY MODAL
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const url = card.getAttribute('data-game-url');
+    document.getElementById('game-frame').src = url;
+    document.getElementById('game-modal').style.display = "block";
   });
+});
+
+function closeModal() {
+  document.getElementById('game-frame').src = "";
+  document.getElementById('game-modal').style.display = "none";
 }
 </script>
 
