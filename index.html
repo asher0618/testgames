@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Game Site</title>
+  <title>AR Games</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>My Games</h1>
-  <input type="text" placeholder="Search games...">
+<!-- TOP BAR -->
+<header class="topbar">
+  <nav class="categories">
+    <button>Sports</button>
+    <button>Arcade</button>
+    <button>Puzzle</button>
+  </nav>
+
+  <h1 class="logo">AR Games</h1>
+
+  <nav class="categories">
+    <button>Store</button>
+    <button>Multiplayer</button>
+  </nav>
 </header>
 
-<main class="grid" id="gameGrid"></main>
+<!-- GAME GRID -->
+<main class="grid">
+  <div class="card">
+    <img src="thumbnails/game1.png">
+    <p>Game Name</p>
+  </div>
 
-<script src="games.js"></script>
+  <div class="card">
+    <img src="thumbnails/game2.png">
+    <p>Game Name</p>
+  </div>
+
+  <div class="card">
+    <img src="thumbnails/game3.png">
+    <p>Game Name</p>
+  </div>
+</main>
+
 </body>
 </html>
-
