@@ -28,7 +28,8 @@
   </div>
 </header>
 
-<h2 id="category-title" style="text-align: center;">All Games</h2>
+<!-- CENTERED CATEGORY TITLE -->
+<h2 id="category-title">All Games</h2>
 
 <main class="grid">
 
@@ -84,7 +85,8 @@ function filterGames(category) {
 
   title.textContent =
     category.charAt(0).toUpperCase() + category.slice(1) + " Games";
-  title.style.textAlign = "center"; // make sure it's centered
+  title.style.textAlign = "center";
+  title.style.width = "100%";
 
   cards.forEach(card => {
     card.style.display =
@@ -97,6 +99,7 @@ function goHome() {
   const title = document.getElementById('category-title');
   title.textContent = "All Games";
   title.style.textAlign = "center";
+  title.style.width = "100%";
 
   cards.forEach(card => {
     card.style.display = "block";
