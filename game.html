@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Play Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">⬅ Back</a>
+  <h1 id="title"></h1>
+</header>
+
+<iframe id="gameFrame"></iframe>
+
+<script>
+const params = new URLSearchParams(location.search);
+document.getElementById("title").textContent = params.get("title");
+document.getElementById("gameFrame").src = params.get("src");
+</script>
+
+</body>
+</html>
 
