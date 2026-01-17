@@ -66,5 +66,32 @@
 </main>
 
 <script src="script.js"></script>
+
+  <script>
+function filterGames(category) {
+  const cards = document.querySelectorAll('.card');
+  const title = document.getElementById('category-title');
+
+  title.textContent =
+    category.charAt(0).toUpperCase() + category.slice(1) + " Games";
+
+  cards.forEach(card => {
+    card.style.display =
+      card.classList.contains(category) ? "block" : "none";
+  });
+}
+
+function goHome() {
+  const cards = document.querySelectorAll('.card');
+  const title = document.getElementById('category-title');
+
+  title.textContent = "All Games";
+
+  cards.forEach(card => {
+    card.style.display = "block";
+  });
+}
+</script>
+
 </body>
 </html>
