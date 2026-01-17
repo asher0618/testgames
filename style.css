@@ -87,12 +87,14 @@ button:hover {
 
 /* CATEGORY TITLE */
 #category-title {
+  width: 100%;
   text-align: center;
   margin: 28px 0 16px;
   font-size: 22px;
   font-weight: 700;
   color: #d8b4fe;
   text-shadow: 0 0 12px #7b2cff66;
+  display: block;
 }
 
 /* GAME GRID */
