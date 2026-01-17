@@ -6,39 +6,65 @@
 </head>
 <body>
 
-<!-- TOP BAR -->
+<div class="background"></div>
+
 <header class="topbar">
-  <nav class="categories">
-    <button>Sports</button>
-    <button>Arcade</button>
-    <button>Puzzle</button>
-  </nav>
+  <div class="left-tabs">
+    <button onclick="filterGames('sports')">Sports</button>
+    <button onclick="filterGames('arcade')">Arcade</button>
+    <button onclick="filterGames('puzzle')">Puzzle</button>
+    <button onclick="filterGames('clicker')">Clicker</button>
+    <button onclick="filterGames('io')">.IO</button>
+  </div>
 
-  <h1 class="logo">AR Games</h1>
+  <!-- CLICKABLE HOME TITLE -->
+  <h1 class="logo home-btn" onclick="goHome()">AR Games</h1>
 
-  <nav class="categories">
-    <button>Store</button>
-    <button>Multiplayer</button>
-  </nav>
+  <div class="right-tabs">
+    <button onclick="filterGames('shooting')">Shooting</button>
+    <button onclick="filterGames('cars')">Cars</button>
+    <button onclick="filterGames('adventure')">Adventure</button>
+    <button onclick="filterGames('store')">Store</button>
+    <button onclick="filterGames('multiplayer')">Multiplayer</button>
+  </div>
 </header>
 
-<!-- GAME GRID -->
+<h2 id="category-title">All Games</h2>
+
 <main class="grid">
-  <div class="card">
+
+  <div class="card arcade">
     <img src="thumbnails/game1.png">
-    <p>Game Name</p>
+    <p>Neon Runner</p>
   </div>
 
-  <div class="card">
+  <div class="card shooting">
     <img src="thumbnails/game2.png">
-    <p>Game Name</p>
+    <p>Pixel Blaster</p>
   </div>
 
-  <div class="card">
+  <div class="card cars">
     <img src="thumbnails/game3.png">
-    <p>Game Name</p>
+    <p>Drift X</p>
   </div>
+
+  <div class="card io">
+    <img src="thumbnails/game4.png">
+    <p>Worm.io</p>
+  </div>
+
+  <div class="card clicker">
+    <img src="thumbnails/game5.png">
+    <p>Idle Core</p>
+  </div>
+
+  <div class="card adventure">
+    <img src="thumbnails/game6.png">
+    <p>Shadow Quest</p>
+  </div>
+
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
