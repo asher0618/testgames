@@ -32,66 +32,68 @@
 
 <main class="grid">
 
-  <!-- ORIGINAL & AZ GAME CARDS -->
-
   <!-- Arcade -->
-  <div class="card arcade" data-game-url="https://azgames.io/animal-craft">
-    <img src="thumbnails/game1.png">
+  <div class="card arcade" data-game="animal-craft">
+    <img src="thumbnails/animal-craft.png">
+    <p>Animal Craft</p>
+  </div>
+  <div class="card arcade" data-game="loop-crash">
+    <img src="thumbnails/loop-crash.png">
+    <p>Loop Crash</p>
+  </div>
+  <div class="card arcade" data-game="neon-runner">
+    <img src="thumbnails/neon-runner.png">
     <p>Neon Runner</p>
   </div>
-  <div class="card arcade" data-game-url="https://azgames.io/loop-crash">
-    <img src="thumbnails/game2.png">
-    <p>Retro Dash</p>
-  </div>
 
-  <!-- Shooting -->
-  <div class="card shooting" data-game-url="https://azgames.io/undead-corridor">
-    <img src="thumbnails/game3.png">
-    <p>Void Shooter</p>
-  </div>
-
-  <!-- Cars -->
-  <div class="card cars" data-game-url="https://azgames.io/car-chaos">
-    <img src="thumbnails/game4.png">
-    <p>Car Chaos</p>
-  </div>
-  <div class="card cars" data-game-url="https://azgames.io/police-drive">
-    <img src="thumbnails/game5.png">
-    <p>Police Drive</p>
-  </div>
-
-  <!-- Adventure -->
-  <div class="card adventure" data-game-url="https://azgames.io/dino-age">
-    <img src="thumbnails/game6.png">
-    <p>Dino Age</p>
+  <!-- Sports -->
+  <div class="card sports" data-game="arcade-tennis">
+    <img src="thumbnails/arcade-tennis.png">
+    <p>Arcade Tennis</p>
   </div>
 
   <!-- Puzzle -->
-  <div class="card puzzle" data-game-url="https://azgames.io/plants-vs-brainrots">
-    <img src="thumbnails/game7.png">
+  <div class="card puzzle" data-game="plants-vs-brainrots">
+    <img src="thumbnails/plants-vs-brainrots.png">
     <p>Plants vs Brainrots</p>
   </div>
 
   <!-- Clicker -->
-  <div class="card clicker" data-game-url="https://azgames.io/tap-rich-idle">
-    <img src="thumbnails/game8.png">
+  <div class="card clicker" data-game="tap-rich-idle">
+    <img src="thumbnails/tap-rich-idle.png">
     <p>Tap Rich Idle</p>
   </div>
 
   <!-- IO -->
-  <div class="card io" data-game-url="https://azgames.io/orbit-kick">
-    <img src="thumbnails/game9.png">
+  <div class="card io" data-game="orbit-kick">
+    <img src="thumbnails/orbit-kick.png">
     <p>Orbit Kick</p>
   </div>
-  <div class="card io" data-game-url="https://azgames.io/tiny-arena">
-    <img src="thumbnails/game10.png">
+  <div class="card io" data-game="tiny-arena">
+    <img src="thumbnails/tiny-arena.png">
     <p>Tiny Arena</p>
   </div>
 
-  <!-- Sports -->
-  <div class="card sports" data-game-url="https://azgames.io/arcade-tennis">
-    <img src="thumbnails/game11.png">
-    <p>Arcade Tennis</p>
+  <!-- Shooting -->
+  <div class="card shooting" data-game="undead-corridor">
+    <img src="thumbnails/undead-corridor.png">
+    <p>Undead Corridor</p>
+  </div>
+
+  <!-- Cars -->
+  <div class="card cars" data-game="car-chaos">
+    <img src="thumbnails/car-chaos.png">
+    <p>Car Chaos</p>
+  </div>
+  <div class="card cars" data-game="police-drive">
+    <img src="thumbnails/police-drive.png">
+    <p>Police Drive</p>
+  </div>
+
+  <!-- Adventure -->
+  <div class="card adventure" data-game="dino-age">
+    <img src="thumbnails/dino-age.png">
+    <p>Dino Age</p>
   </div>
 
 </main>
@@ -131,8 +133,8 @@ function goHome() {
 const cards = document.querySelectorAll('.card');
 cards.forEach(card => {
   card.addEventListener('click', () => {
-    const url = card.getAttribute('data-game-url');
-    document.getElementById('game-frame').src = url;
+    const gameName = card.getAttribute('data-game');
+    document.getElementById('game-frame').src = `play/${gameName}.html`;
     document.getElementById('game-modal').style.display = "block";
   });
 });
