@@ -1,76 +1,102 @@
-/* Stylish font for title */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 body {
   margin: 0;
-  background: #121212;
+  background: black;
   color: white;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* ===== TOP BAR ===== */
+/* Animated background */
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, #7b2cff55, transparent 40%),
+    radial-gradient(circle at 80% 70%, #a855f755, transparent 40%);
+  animation: bgMove 12s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes bgMove {
+  from { background-position: 0% 0%, 100% 100%; }
+  to { background-position: 100% 0%, 0% 100%; }
+}
+
+/* Top bar */
 .topbar {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 15px 20px;
-  background: #1e1e1e;
-  border-bottom: 2px solid #333;
+  padding: 14px 20px;
+  background: #111;
+  border-bottom: 1px solid #333;
 }
 
-/* Center title */
-.logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 26px;
-  color: #00ffe1;
-  text-align: center;
-  margin: 0;
-}
-
-/* Categories */
-.categories {
+.left-tabs, .right-tabs {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
-.categories button {
-  background: #2a2a2a;
+button {
+  background: #222;
   color: white;
   border: none;
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 13px;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s;
 }
 
-.categories button:hover {
-  background: #00ffe1;
-  color: black;
-  transform: scale(1.05);
+button:hover {
+  background: #7b2cff;
 }
 
-/* ===== GAME GRID ===== */
+/* Logo */
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  color: #c084fc;
+  text-shadow: 0 0 14px #a855f7;
+  margin: 0;
+}
+
+.home-btn {
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  text-shadow: 0 0 22px #d8b4fe;
+}
+
+/* Category title */
+#category-title {
+  text-align: center;
+  margin: 22px 0 10px;
+  font-size: 20px;
+  color: #d8b4fe;
+}
+
+/* Game grid */
 .grid {
-  padding: 20px;
+  padding: 20px 40px 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
 }
 
-/* Game card */
 .card {
-  background: #1e1e1e;
-  border-radius: 10px;
+  background: #181818;
+  border-radius: 12px;
   overflow: hidden;
   text-align: center;
-  cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #00ffe1;
+  transform: scale(1.06);
+  box-shadow: 0 0 18px #7b2cff;
 }
 
 .card img {
@@ -81,5 +107,4 @@ body {
 
 .card p {
   margin: 10px 0;
-  font-size: 14px;
 }
