@@ -61,6 +61,7 @@ button {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 button:hover {
@@ -87,9 +88,11 @@ button:hover {
 /* CATEGORY TITLE */
 #category-title {
   text-align: center;
-  margin: 22px 0 10px;
-  font-size: 20px;
+  margin: 28px 0 16px;
+  font-size: 22px;
+  font-weight: 700;
   color: #d8b4fe;
+  text-shadow: 0 0 12px #7b2cff66;
 }
 
 /* GAME GRID */
@@ -105,12 +108,13 @@ button:hover {
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
 }
 
 .card:hover {
   transform: scale(1.06);
-  box-shadow: 0 0 18px #7b2cff;
+  box-shadow: 0 0 22px #7b2cff99;
 }
 
 .card img {
@@ -121,4 +125,27 @@ button:hover {
 
 .card p {
   margin: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+/* RESPONSIVE TWEAKS */
+@media screen and (max-width: 600px) {
+  .grid {
+    padding: 15px 20px 40px;
+    gap: 18px;
+  }
+
+  .card img {
+    height: 100px;
+  }
+
+  #category-title {
+    font-size: 20px;
+  }
+
+  button {
+    padding: 5px 10px;
+  }
 }
