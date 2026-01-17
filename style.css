@@ -1,87 +1,76 @@
-/* === Import a cool Google Font === */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* Stylish font for title */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
   background: #121212;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
-/* === Header / Top bar === */
-header {
-  display: flex;
+/* ===== TOP BAR ===== */
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 15px 20px;
   background: #1e1e1e;
   border-bottom: 2px solid #333;
-  flex-wrap: wrap;
 }
 
-/* Logo / site name */
-header h1 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+/* Center title */
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  color: #00ffe1;
+  text-align: center;
   margin: 0;
-  color: #ffdd57;
 }
 
-/* Category buttons container */
+/* Categories */
 .categories {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
 }
 
-/* Category button styling */
-.category-btn {
+.categories button {
+  background: #2a2a2a;
+  color: white;
+  border: none;
   padding: 6px 12px;
   border-radius: 6px;
-  border: none;
-  background: #333;
-  color: white;
   cursor: pointer;
+  font-size: 13px;
   transition: background 0.2s, transform 0.2s;
-  font-size: 12px;
 }
 
-.category-btn:hover {
-  background: #ffdd57;
-  color: #121212;
+.categories button:hover {
+  background: #00ffe1;
+  color: black;
   transform: scale(1.05);
 }
 
-/* === Search bar === */
-header input[type="text"] {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  margin-left: 10px;
-  flex: 1;
-  min-width: 150px;
-}
-
-/* === Game Grid === */
+/* ===== GAME GRID ===== */
 .grid {
+  padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
 }
 
-/* === Game Card === */
+/* Game card */
 .card {
   background: #1e1e1e;
   border-radius: 10px;
   overflow: hidden;
+  text-align: center;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px #ffdd57;
+  box-shadow: 0 0 15px #00ffe1;
 }
 
 .card img {
@@ -90,23 +79,7 @@ header input[type="text"] {
   object-fit: cover;
 }
 
-.card h3 {
-  padding: 10px;
+.card p {
+  margin: 10px 0;
   font-size: 14px;
-  text-align: center;
 }
-
-/* === Responsive adjustments === */
-@media screen and (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .categories {
-    gap: 6px;
-  }
-}
-
-
