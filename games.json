@@ -1,1 +1,26 @@
+const games = [
+  {
+    title: "2048",
+    thumb: "thumbnails/2048.png",
+    link: "games/2048/"
+  },
+  {
+    title: "HexGL",
+    thumb: "thumbnails/hexgl.png",
+    link: "games/hexgl/"
+  }
+];
+
+const grid = document.getElementById("gameGrid");
+
+games.forEach(game => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <img src="${game.thumb}">
+    <h3>${game.title}</h3>
+  `;
+  card.onclick = () => location.href = game.link;
+  grid.appendChild(card);
+});
 
