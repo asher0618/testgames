@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-/* PURE BLACK BACKGROUND + PURPLE WAVES */
+/* BACKGROUND */
 .background {
   position: fixed;
   inset: 0;
@@ -61,7 +61,6 @@ button {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 button:hover {
@@ -87,14 +86,10 @@ button:hover {
 
 /* CATEGORY TITLE */
 #category-title {
-  width: 100%;
   text-align: center;
-  margin: 28px 0 16px;
-  font-size: 22px;
-  font-weight: 700;
+  margin: 22px 0 10px;
+  font-size: 20px;
   color: #d8b4fe;
-  text-shadow: 0 0 12px #7b2cff66;
-  display: block;
 }
 
 /* GAME GRID */
@@ -110,13 +105,13 @@ button:hover {
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
 
 .card:hover {
   transform: scale(1.06);
-  box-shadow: 0 0 22px #7b2cff99;
+  box-shadow: 0 0 18px #7b2cff;
 }
 
 .card img {
@@ -127,27 +122,34 @@ button:hover {
 
 .card p {
   margin: 10px 0;
-  font-size: 16px;
-  font-weight: 500;
-  color: #e0e0e0;
 }
 
-/* RESPONSIVE TWEAKS */
-@media screen and (max-width: 600px) {
-  .grid {
-    padding: 15px 20px 40px;
-    gap: 18px;
-  }
+/* GAME MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
 
-  .card img {
-    height: 100px;
-  }
+.modal iframe {
+  display: block;
+  margin: 50px auto;
+  max-width: 90%;
+}
 
-  #category-title {
-    font-size: 20px;
-  }
-
-  button {
-    padding: 5px 10px;
-  }
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 101;
 }
