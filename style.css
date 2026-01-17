@@ -8,35 +8,50 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated background */
+/* PURE BLACK BACKGROUND + PURPLE WAVES */
 .background {
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, #7b2cff55, transparent 40%),
-    radial-gradient(circle at 80% 70%, #a855f755, transparent 40%);
-  animation: bgMove 12s infinite alternate ease-in-out;
+  background: black;
   z-index: -1;
+  overflow: hidden;
 }
 
-@keyframes bgMove {
-  from { background-position: 0% 0%, 100% 100%; }
-  to { background-position: 100% 0%, 0% 100%; }
+.background::before,
+.background::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #7b2cff33 10%, transparent 45%);
+  animation: waveMove 25s linear infinite;
 }
 
-/* Top bar */
+.background::after {
+  animation-duration: 40s;
+  opacity: 0.6;
+}
+
+@keyframes waveMove {
+  from { transform: translate(-25%, -25%); }
+  to { transform: translate(0%, 0%); }
+}
+
+/* TOP BAR */
 .topbar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 14px 20px;
   background: #111;
   border-bottom: 1px solid #333;
 }
 
-.left-tabs, .right-tabs {
+.left-tabs,
+.right-tabs {
   display: flex;
   gap: 8px;
+  flex-wrap: nowrap;
 }
 
 button {
@@ -46,14 +61,13 @@ button {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 button:hover {
   background: #7b2cff;
 }
 
-/* Logo */
+/* LOGO */
 .logo {
   font-family: 'Orbitron', sans-serif;
   font-size: 26px;
@@ -70,7 +84,7 @@ button:hover {
   text-shadow: 0 0 22px #d8b4fe;
 }
 
-/* Category title */
+/* CATEGORY TITLE */
 #category-title {
   text-align: center;
   margin: 22px 0 10px;
@@ -78,7 +92,7 @@ button:hover {
   color: #d8b4fe;
 }
 
-/* Game grid */
+/* GAME GRID */
 .grid {
   padding: 20px 40px 60px;
   display: grid;
