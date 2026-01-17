@@ -28,7 +28,7 @@
   </div>
 </header>
 
-<h2 id="category-title">All Games</h2>
+<h2 id="category-title" style="text-align: center;">All Games</h2>
 
 <main class="grid">
 
@@ -36,29 +36,44 @@
   <div class="card arcade"><img src="thumbnails/game1.png"><p>Neon Runner</p></div>
   <div class="card arcade"><img src="thumbnails/game2.png"><p>Retro Dash</p></div>
   <div class="card arcade"><img src="thumbnails/game3.png"><p>Block Smash</p></div>
+  <div class="card arcade"><img src="thumbnails/game15.png"><p>Pixel Racer</p></div>
+  <div class="card arcade"><img src="thumbnails/game16.png"><p>Laser Jump</p></div>
 
   <!-- SHOOTING -->
   <div class="card shooting"><img src="thumbnails/game4.png"><p>Pixel Ops</p></div>
   <div class="card shooting"><img src="thumbnails/game5.png"><p>Void Shooter</p></div>
+  <div class="card shooting"><img src="thumbnails/game17.png"><p>Star Sniper</p></div>
 
   <!-- CARS -->
   <div class="card cars"><img src="thumbnails/game6.png"><p>Night Drift</p></div>
   <div class="card cars"><img src="thumbnails/game7.png"><p>Turbo Lane</p></div>
+  <div class="card cars"><img src="thumbnails/game18.png"><p>Speed Rally</p></div>
 
   <!-- ADVENTURE -->
   <div class="card adventure"><img src="thumbnails/game8.png"><p>Lost Realm</p></div>
   <div class="card adventure"><img src="thumbnails/game9.png"><p>Dungeon Path</p></div>
+  <div class="card adventure"><img src="thumbnails/game19.png"><p>Forest Quest</p></div>
+  <div class="card adventure"><img src="thumbnails/game20.png"><p>Cave Explorer</p></div>
 
   <!-- PUZZLE -->
   <div class="card puzzle"><img src="thumbnails/game10.png"><p>Mind Grid</p></div>
   <div class="card puzzle"><img src="thumbnails/game11.png"><p>Hex Logic</p></div>
+  <div class="card puzzle"><img src="thumbnails/game21.png"><p>Shape Matcher</p></div>
 
   <!-- CLICKER -->
   <div class="card clicker"><img src="thumbnails/game12.png"><p>Click Forge</p></div>
+  <div class="card clicker"><img src="thumbnails/game22.png"><p>Idle Miner</p></div>
 
   <!-- IO -->
   <div class="card io"><img src="thumbnails/game13.png"><p>Dots.io</p></div>
   <div class="card io"><img src="thumbnails/game14.png"><p>WormZone</p></div>
+  <div class="card io"><img src="thumbnails/game23.png"><p>Blob Battle</p></div>
+
+  <!-- MULTIPLAYER -->
+  <div class="card multiplayer"><img src="thumbnails/game24.png"><p>Battle Arena</p></div>
+  <div class="card multiplayer"><img src="thumbnails/game25.png"><p>Treasure Hunters</p></div>
+  <div class="card multiplayer"><img src="thumbnails/game26.png"><p>Speed Racers Online</p></div>
+  <div class="card multiplayer"><img src="thumbnails/game27.png"><p>Survival Squad</p></div>
 
 </main>
 
@@ -69,6 +84,7 @@ function filterGames(category) {
 
   title.textContent =
     category.charAt(0).toUpperCase() + category.slice(1) + " Games";
+  title.style.textAlign = "center"; // make sure it's centered
 
   cards.forEach(card => {
     card.style.display =
@@ -78,7 +94,9 @@ function filterGames(category) {
 
 function goHome() {
   const cards = document.querySelectorAll('.card');
-  document.getElementById('category-title').textContent = "All Games";
+  const title = document.getElementById('category-title');
+  title.textContent = "All Games";
+  title.style.textAlign = "center";
 
   cards.forEach(card => {
     card.style.display = "block";
